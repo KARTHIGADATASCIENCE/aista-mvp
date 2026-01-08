@@ -1,4 +1,5 @@
 import type { AISuggestion } from "../types";
+import { PROMPTS } from "../utils/prompts";
 
 export function getAISuggestion(
   engagementStatus: "high" | "medium" | "low",
@@ -7,7 +8,7 @@ export function getAISuggestion(
   if (engagementStatus !== "low") return null;
 
   return {
-    title: "Try a simpler explanation",
-    content: `Students seem disengaged. Explain "${topic}" using a real-world analogy or a simple example.`
+    title: "Engagement Low – AI Assist",
+    content: PROMPTS.simplifyExplanation(topic)
   };
 }
