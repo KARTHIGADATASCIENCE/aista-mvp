@@ -1,16 +1,19 @@
 import type { SessionSummary } from "../types";
 
+/**
+ * Generates end-of-session learning content
+ */
 export function generateSessionSummary(topic: string): SessionSummary {
   return {
     topic,
     keyPoints: [
-      `What is ${topic}?`,
-      `Why ${topic} matters`,
+      `Basic concept of ${topic}`,
+      `Why ${topic} is important`,
       `Simple example of ${topic}`
     ],
-    notes: `This session focused on explaining ${topic} using simple language and examples so students can easily understand.`,
+    notes: `In this session, ${topic} was explained using simple language and examples to help students understand clearly.`,
     quiz: [
-      `Define ${topic} in simple terms.`,
+      `What is ${topic}?`,
       `Give one real-world example of ${topic}.`,
       `Why is ${topic} important?`
     ]

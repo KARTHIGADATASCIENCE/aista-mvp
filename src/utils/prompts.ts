@@ -1,10 +1,12 @@
+// Central place for all AI prompts (easy to improve later)
+
 export const PROMPTS = {
   simplifyExplanation: (topic: string) =>
-    `Explain ${topic} in very simple terms, as if teaching a beginner. Use a real-world analogy.`,
+    `Explain ${topic} in very simple terms, like teaching a beginner. Use a real-world analogy.`,
 
-  giveExample: (topic: string) =>
-    `Give one clear, practical example to explain ${topic}.`,
+  engagementRecoveryTip: (topic: string) =>
+    `Students seem disengaged. Suggest a simple way to re-explain ${topic} and regain attention.`,
 
   generateQuiz: (topic: string) =>
-    `Generate 3 simple quiz questions to test understanding of ${topic}.`
+    `Create 3 very simple quiz questions to test understanding of ${topic}.`
 };
