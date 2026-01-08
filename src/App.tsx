@@ -1,10 +1,23 @@
-function App() {
-  return (
-    <div style={{ padding: 40 }}>
-      <h1>AISTA – AI Teaching & Student Engagement Assistant</h1>
-      <p>If you see this, React is working ✅</p>
-    </div>
-  );
-}
+import { useState } from "react";
+import ClassSetup from "./pages/classsetup";
+import LiveClass from "./pages/Liveclass";
 
-export default App;
+export default function App() {
+  const [started, setStarted] = useState(false);
+  const [topic, setTopic] = useState("");
+  const [mode, setMode] = useState<"camera" | "no-camera" | "video">("camera");
+
+  if (!started) {
+    return (
+      <ClassSetup
+        onStart={(t, m) => {
+          setTopic(t);
+          setMode(m);
+          setStarted(true);
+        }}
+      />
+    );
+  }
+
+  return <LiveClass initialTopic={topic} mode={mode} />;
+}
